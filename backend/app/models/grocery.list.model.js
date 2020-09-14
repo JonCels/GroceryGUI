@@ -28,10 +28,9 @@ GroceryList.create = async function(groceries, result) {
       sections.push([groceries.sections[i], id]);
     }
     await query("INSERT INTO sections VALUES ?", [sections]);
-    //result(null, data);
+    result(null, id);
   }
   catch(err) {
     result(err, null);
   }
-
 }
